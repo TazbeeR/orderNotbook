@@ -1,6 +1,5 @@
 package com.example.zeszyt02.controller;
 
-
 import com.example.zeszyt02.entity.SheepCasing;
 import com.example.zeszyt02.service.SheepCasingService;
 import jakarta.persistence.EntityNotFoundException;
@@ -15,6 +14,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/sheepcasing")
+
 public class SheepCasingController {
 
     @Autowired
@@ -23,13 +23,13 @@ public class SheepCasingController {
     @GetMapping("/list")
     public String sheepCasingList(Model model) {
         List<SheepCasing>  sheepCasingsList = sheepCasingService.getSheepCasings();
-        model.addAttribute("sheepCasings", sheepCasingsList);
+        model.addAttribute("sheepcasings", sheepCasingsList);
         return "/sheepcasings/list";
     }
 
     @GetMapping("/add")
-    public String initSheepCasing(Model model) {
-        model.addAttribute("sheepCasing", new SheepCasing());
+    public String initAddSheepCasing(Model model) {
+        model.addAttribute("sheepcasing", new SheepCasing());
         return "/sheepcasings/form";
     }
 
@@ -44,11 +44,11 @@ public class SheepCasingController {
 
     @GetMapping("/update/{id}")
     public String initSheepCasing(@PathVariable long id, Model model) {
-        model.addAttribute("sheepCasing", sheepCasingService.getSheepCasing(id));
+        model.addAttribute("sheepcasing", sheepCasingService.getSheepCasing(id));
         return "/sheepcasings/form";
     }
 
-    @PostMapping("/update/{id")
+    @PostMapping("/update/{id}")
     public String updateSheepCasing(@Valid SheepCasing sheepCasing, BindingResult result) {
         if (result.hasErrors()) {
             return "/sheepcasings/form";
@@ -60,7 +60,7 @@ public class SheepCasingController {
     @GetMapping("/delete/{id}")
     public String deleteSheepCasing(@PathVariable long id, Model model) {
     SheepCasing sheepCasing = sheepCasingService.getSheepCasing(id).orElseThrow(EntityNotFoundException::new);
-    model.addAttribute("sheepCasing", sheepCasing);
+    model.addAttribute("sheepcasing", sheepCasing);
     return "/sheepcasings/delete";
     }
 
