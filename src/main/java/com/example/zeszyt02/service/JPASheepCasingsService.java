@@ -22,8 +22,8 @@ public class JPASheepCasingsService implements SheepCasingService {
     }
 
     @Override
-    public void addSheepCasing(SheepCasing sheepCasing)  {
-        sheepCasingsRepository.save(sheepCasing);
+    public SheepCasing addSheepCasing(SheepCasing sheepCasing)  {
+        return sheepCasingsRepository.save(sheepCasing);
     }
 
     @Override

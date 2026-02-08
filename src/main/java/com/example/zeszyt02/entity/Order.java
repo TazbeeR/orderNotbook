@@ -1,5 +1,6 @@
 package com.example.zeszyt02.entity;
 
+import com.example.zeszyt02.entity.DTO.OrderItem;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,7 +23,10 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private List<Object> listOfOrderItems;
+    //TODO
+    //Sprawdzić jaki obiekt tu przyjdzie
+
+//    private List<OrderItem> listOfOrderItems;
 
     private boolean status;
 

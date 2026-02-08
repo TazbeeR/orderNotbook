@@ -4,16 +4,23 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.stereotype.Component;
 
-@Component
+import java.math.BigDecimal;
+
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class OrderSpiceItem extends OrderItem {
+public abstract class OrderItem {
 
-    private String name;
+    private String type;
+
+    private BigDecimal price;
+
+    private short  quantity;
+
+    private String  description;
 
 }
+

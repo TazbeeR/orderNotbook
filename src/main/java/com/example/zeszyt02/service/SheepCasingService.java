@@ -9,7 +9,7 @@ public interface SheepCasingService {
 
     List<SheepCasing> getSheepCasings();
     Optional<SheepCasing> getSheepCasing(long id);
-    void addSheepCasing (SheepCasing sheepCasing);
+    SheepCasing addSheepCasing (SheepCasing sheepCasing);
     void deleteSheepCasing(long id);
     void updateSheepCasing(SheepCasing sheepCasing);
 }

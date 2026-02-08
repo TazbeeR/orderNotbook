@@ -15,19 +15,11 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class OrderHogCasingItem {
+public class OrderHogCasingItem extends OrderItem {
 
     private String origin;
-
     private HogCasing hogCasing;
-
     private String origin2;
-
     private HogCasing hogCasing2;
 
-    private short quantity;
-
-    private BigDecimal price;
-
-    private String description;
 }

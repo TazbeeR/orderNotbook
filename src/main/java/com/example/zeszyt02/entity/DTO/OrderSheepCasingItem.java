@@ -7,14 +7,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
 
-import java.math.BigDecimal;
-
 @Component
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-
 
 public class OrderSheepCasingItem {
 
@@ -26,9 +23,4 @@ public class OrderSheepCasingItem {
 
     private SheepCasing sheepCasing2;
 
-    private short quantity;
-
-    private BigDecimal price;
-
-    private String description;
 }

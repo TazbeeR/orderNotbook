@@ -1,10 +1,13 @@
 package com.example.zeszyt02.controller;
 
-
+import com.example.zeszyt02.entity.Customers;
+import com.example.zeszyt02.entity.DTO.OrderHogCasingItem;
+import com.example.zeszyt02.entity.DTO.OrderSpiceItem;
 import com.example.zeszyt02.entity.Spices;
+import com.example.zeszyt02.service.CustomersService;
 import com.example.zeszyt02.service.SpicesService;
 import jakarta.persistence.EntityNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -12,12 +15,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@AllArgsConstructor
 @Controller
 @RequestMapping("/spice")
 
 public class SpisesController {
 
-    @Autowired
     private SpicesService spicesService;
 
     @GetMapping("/list")
