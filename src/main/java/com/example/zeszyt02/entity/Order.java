@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
+@Table(name = "orders")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -37,7 +38,7 @@ public class Order {
     @UpdateTimestamp
     private LocalDateTime updateDate;
 
-    @OneToOne
-    @JoinColumn(name = "customer_id")
-    private Customers customer;
+//    @OneToOne
+//    @JoinColumn(name = "customer_id")
+//    private Customers customer;
 }

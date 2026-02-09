@@ -29,21 +29,21 @@ public class SheepCasingController {
         return new ResponseEntity<>(saved, HttpStatus.CREATED);
     }
 
-    @PutMapping("/update/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<SheepCasing> updateSheepCasing(@PathVariable long id, @Valid @RequestBody SheepCasing sheepCasing) {
-        sheepCasing.setId(id); // Upewniamy się, że nadpisujemy właściwy rekord
+        sheepCasing.setId(id);
         sheepCasingService.updateSheepCasing(sheepCasing);
         return ResponseEntity.ok(sheepCasing);
     }
 
-    @GetMapping("/update/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<SheepCasing> getOne(@PathVariable long id) {
         return sheepCasingService.getSheepCasing(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteSheepCasing(@PathVariable long id) {
         sheepCasingService.deleteSheepCasing(id);
         return ResponseEntity.noContent().build();

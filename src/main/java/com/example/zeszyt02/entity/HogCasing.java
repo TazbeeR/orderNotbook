@@ -20,8 +20,6 @@ public class HogCasing {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-//    @NotEmpty
-//    @Pattern(regexp = "[0-9][0-9]/[0-9][0-9][A-Z][A-Z]")
     private String caliber;
 
 }
